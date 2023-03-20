@@ -2,7 +2,7 @@ server:
   port: 8888
   shutdown: graceful
   tomcat:
-    connection-timeout: 2s
+    connection-timeout: 10s
     keep-alive-timeout: 15s
     threads:
       max: 50
@@ -17,8 +17,20 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/jempitman/config-repo.git
+          uri: https://github.com/jempitman/config-repo
           default-label: main
           timeout: 5
           clone-on-start: true
           force-pull: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+      probes:
+        enabled: true
