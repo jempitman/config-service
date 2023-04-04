@@ -27,7 +27,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: onfigprops, env, health, heapdump, info, loggers, mappings, prometheus
+        include: configprops, env, health, heapdump, info, loggers, mappings, prometheus
   endpoint:
     health:
       show-details: always
